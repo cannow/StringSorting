@@ -29,6 +29,25 @@ namespace StringOrdering
                     Console.WriteLine(order);
                 }
             }
+
+            Longest("aabbccddeeffgghhiijjkkllmmnnoopp", "qqrrssttuuvvwwxxyyzzakfs");
+        }
+        public static string Longest(string s1, string s2)
+        {
+            char[] letters = (string.Concat(s2, s1)).ToCharArray();
+            Array.Sort(letters);
+            string output = "";
+
+            foreach (var letter in letters)
+            {
+                if (!output.Contains(letter))
+                {
+                    output += letter;
+                }
+            }
+
+            Console.WriteLine(output);
+            return output;
         }
     }
 }
